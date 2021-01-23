@@ -1,6 +1,6 @@
 <script>
     import Station from './Station.svelte';
-    const search_url = 'http://de1.api.radio-browser.info/json/stations/search'
+    const search_url = 'https://de1.api.radio-browser.info/json/stations/search'
 
     const m3u_header = "#EXTM3U"
     const m3u_entry = (station) => `#EXTINF:-1, ${station.name}\n${station.url}`
