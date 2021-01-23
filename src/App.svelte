@@ -9,30 +9,19 @@
     const queryString = (params) => "?" + Object.keys(params).map(key => key + '=' + params[key]).join('&')
     const fullUrl = (params) => search_url + queryString(params)
  
-
-    let countries = [
-        { id: 1, name: `all` },
-        { id: 2, name: `pl` },
-        { id: 3, name: `uk` }
-    ];
-
-    let search = '';
+    let name = '';
     let m3u_list = [];
     let stations_selected = []
     let stations_downloaded = []
 
-    function handleSubmit() {
-        doPost()
-    };
-    async function doPost () {
-        console.log(search)
+    async function handleSubmit () {
         const res = await fetch(
-            fullUrl({ name: search, order: "votes", reverse: true}),
+            fullUrl({ name: name, order: "votes", reverse: true}),
             { method: 'GET', }
         )
-
         stations_downloaded = await res.json()
     }
+
     const deleteItem = selectedStation => {
       stations_selected = stations_selected.filter(station => station.stationuuid !== selectedStation.stationuuid);
     };
@@ -72,40 +61,81 @@
 </script>
 
 <div class="row">
-    <div class="column">
+    <div class="column-3"></div>
+    <div class="column-3">
+        <h1>Radio playlist generator</h1>
+    </div>
+    <div class="column-3"></div>
+</div>
+
+<div class="row">
+    <div class="column-2">
         <h2>Search stations</h2>
         <form on:submit|preventDefault={handleSubmit}>
-            <input bind:value={search}>
-            <button disabled={!search} type=submit>
+            <input bind:value={name}>
+            <button disabled={!name} type=submit>
                 Submit
             </button>
         </form>
-        <ul>
-            {#each stations_downloaded as station}
-                <Station station={station} _onclick={addItem} icon=">"/>
-            {/each}
-        </ul>
+        {#if stations_downloaded.length}
+        <table>
+            <thead>
+                <tr>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Codec
+                    </th>
+                    <th>
+                        Bitrate
+                    </th>
+                    <th>
+                        Votes
+                    <th>
+                        Add
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                    {#each stations_downloaded as station}
+                        <Station station={station} _onclick={addItem} icon="&rarr;"/>
+                    {/each}
+            </tbody>
+        </table>
+        {/if}
     </div>
-    <div class="column">
+    <div class="column-2">
+        {#if stations_selected.length}
         <h2>Selected stations</h2>
-        <ul>
-            {#each stations_selected as station}
-                <Station station={station} _onclick={deleteItem} icon="x"/>
-            {/each}
-        </ul>
         <button on:click="{download_generator}">
             Download
         </button>
+        <table>
+            <thead>
+                <tr>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Codec
+                    </th>
+                    <th>
+                        Bitrate
+                    </th>
+                    <th>
+                        Votes
+                    <th>
+                        Add
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                {#each stations_selected as station}
+                    <Station station={station} _onclick={deleteItem} icon="&#9249;"/>
+                {/each}
+            </tbody>
+        </table>
+        {/if}
     </div>
 </div>
-
-<style>
-    input { display: block; width: 500px; max-width: 100%; }
-    .row {
-      display: flex;
-    }
-
-    .column {
-      flex: 50%;
-    }
-</style>

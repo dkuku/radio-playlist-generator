@@ -4,14 +4,25 @@
     export let icon;
 </script>
 
-<li>
-    <a href={station.homepage}>
-        <img src={station.favicon} alt={station.name} class="icon"> 
-        {station.name}
-    </a><br>
-    Format: {station.codec} {station.bitrate}, voted: {station.votes}
-    <a class="btn" on:click={() => _onclick(station)}> {icon} </a>
-</li>
+<tr>
+    <td>
+        <a href={station.homepage}>
+            <img src={station.favicon} class="icon"> 
+            {station.name}
+        </a>
+    </td>
+    <td>
+        {station.codec}
+    </td>
+    <td>
+        {station.bitrate}
+    </td>
+    <td>
+        {station.votes}
+    <td>
+        <a class="btn" on:click={() => _onclick(station)}> {icon} </a>
+    </td>
+</tr>
 
 <style>
     .icon {
