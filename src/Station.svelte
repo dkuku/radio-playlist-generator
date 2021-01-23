@@ -6,7 +6,7 @@
 
 <tr>
     <td>
-        <a href={station.homepage}>
+        <a class="break" href={station.homepage}>
             <img src={station.favicon} class="icon"> 
             {station.name}
         </a>
@@ -21,7 +21,6 @@
         {station.votes}
     </td>
     <td>
-        {station.url}
         <a href={station.url} class="btn tooltip" target="_blank" data-tooltip="Play in new window"> &#9658; </a>
     </td>
     <td>

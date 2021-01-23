@@ -9,12 +9,13 @@
     const queryString = (params) => "?" + Object.keys(params).map(key => key + '=' + params[key]).join('&')
     const fullUrl = (params) => search_url + queryString(params)
  
-    let name = '';
+    let search = 'classic rock';
     let m3u_list = [];
     let stations_selected = []
     let stations_downloaded = []
 
-    async function handleSubmit () {
+    async function handleSubmit (name) {
+        search = name
         const res = await fetch(
             fullUrl({ name: name, order: "votes", reverse: true}),
             { method: 'GET', }
@@ -71,13 +72,33 @@
 <div class="row">
     <div class="column-2">
         <h2>Search stations</h2>
-        <form on:submit|preventDefault={handleSubmit}>
-            <input bind:value={name}>
-            <button disabled={!name} type=submit>
+        <form on:submit|preventDefault={()=>handleSubmit(search)}>
+            <input bind:value={search}>
+            <button disabled={!search} type=submit>
                 Submit
             </button>
         </form>
+        <div>
+            <button on:click={()=>handleSubmit("classic rock")}>
+            classic rock
+            </button>
+            <button on:click={()=>handleSubmit("pop")}>
+            pop
+            </button>
+            <button on:click={()=>handleSubmit("party")}>
+            party
+            </button>
+            <button on:click={()=>handleSubmit("disco")}>
+            disco
+            </button>
+            <button on:click={()=>handleSubmit("disco polo")}>
+            disco polo
+            </button>
+            </div>
         {#if stations_downloaded.length}
+        <div>
+            <p>{stations_downloaded.length} results for query "{search}"</p>
+        </div>
         <table>
             <thead>
                 <tr>
