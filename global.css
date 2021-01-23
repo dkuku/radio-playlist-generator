@@ -43,7 +43,7 @@ input, button, select, textarea {
 }
 
 input {
-    min-width: 50%;
+    min-width: 30%;
 }
 input:disabled {
 	color: #ccc;
@@ -74,7 +74,7 @@ button:focus {
 
 table {
     border-collapse: collapse;
-    margin: 25px 10px;
+    margin: 25px 0px;
     font-size: 0.9em;
     min-width: 400px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
@@ -120,7 +120,13 @@ tbody tr.active-row {
 
 .column-2 {
   flex: 50%;
+  padding: 0px 15px;
 }
 .column-3 {
   flex: 33%;
+  padding: 0px 10px;
+}
+.break {
+  max-width: 50ch;
+  display: inline-block;
 }

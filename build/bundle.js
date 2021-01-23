@@ -1,5 +1,5 @@
 
-(function(l, r) { if (l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (window.location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(window.document);
+(function(l, r) { if (l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (window.location.host || 'localhost').split(':')[0] + ':35730/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(window.document);
 var app = (function () {
     'use strict';
 
@@ -427,16 +427,13 @@ var app = (function () {
     	let t7;
     	let t8;
     	let td4;
-    	let t9_value = /*station*/ ctx[0].url + "";
-    	let t9;
-    	let t10;
     	let a1;
-    	let t11;
+    	let t9;
     	let a1_href_value;
-    	let t12;
+    	let t10;
     	let td5;
     	let a2;
-    	let t13;
+    	let t11;
     	let mounted;
     	let dispose;
 
@@ -459,34 +456,33 @@ var app = (function () {
     			t7 = text(t7_value);
     			t8 = space();
     			td4 = element("td");
-    			t9 = text(t9_value);
-    			t10 = space();
     			a1 = element("a");
-    			t11 = text("►");
-    			t12 = space();
+    			t9 = text("►");
+    			t10 = space();
     			td5 = element("td");
     			a2 = element("a");
-    			t13 = text(/*icon*/ ctx[2]);
+    			t11 = text(/*icon*/ ctx[2]);
     			if (img.src !== (img_src_value = /*station*/ ctx[0].favicon)) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "class", "icon svelte-1ejnbx");
-    			add_location(img, file, 9, 12, 152);
+    			add_location(img, file, 9, 12, 166);
+    			attr_dev(a0, "class", "break");
     			attr_dev(a0, "href", a0_href_value = /*station*/ ctx[0].homepage);
     			add_location(a0, file, 8, 8, 112);
     			add_location(td0, file, 7, 4, 99);
-    			add_location(td1, file, 13, 4, 248);
-    			add_location(td2, file, 16, 4, 291);
-    			add_location(td3, file, 19, 4, 336);
+    			add_location(td1, file, 13, 4, 262);
+    			add_location(td2, file, 16, 4, 305);
+    			add_location(td3, file, 19, 4, 350);
     			attr_dev(a1, "href", a1_href_value = /*station*/ ctx[0].url);
     			attr_dev(a1, "class", "btn tooltip svelte-1ejnbx");
     			attr_dev(a1, "target", "_blank");
     			attr_dev(a1, "data-tooltip", "Play in new window");
-    			add_location(a1, file, 24, 8, 414);
-    			add_location(td4, file, 22, 4, 379);
+    			add_location(a1, file, 23, 8, 406);
+    			add_location(td4, file, 22, 4, 393);
     			attr_dev(a2, "href", "#");
     			attr_dev(a2, "class", "btn tooltip svelte-1ejnbx");
     			attr_dev(a2, "data-tooltip", "send to playlist");
-    			add_location(a2, file, 27, 8, 547);
-    			add_location(td5, file, 26, 4, 534);
+    			add_location(a2, file, 26, 8, 539);
+    			add_location(td5, file, 25, 4, 526);
     			add_location(tr, file, 6, 0, 90);
     		},
     		l: function claim(nodes) {
@@ -510,14 +506,12 @@ var app = (function () {
     			append_dev(td3, t7);
     			append_dev(tr, t8);
     			append_dev(tr, td4);
-    			append_dev(td4, t9);
-    			append_dev(td4, t10);
     			append_dev(td4, a1);
-    			append_dev(a1, t11);
-    			append_dev(tr, t12);
+    			append_dev(a1, t9);
+    			append_dev(tr, t10);
     			append_dev(tr, td5);
     			append_dev(td5, a2);
-    			append_dev(a2, t13);
+    			append_dev(a2, t11);
 
     			if (!mounted) {
     				dispose = listen_dev(a2, "click", /*click_handler*/ ctx[3], false, false, false);
@@ -538,13 +532,12 @@ var app = (function () {
     			if (dirty & /*station*/ 1 && t3_value !== (t3_value = /*station*/ ctx[0].codec + "")) set_data_dev(t3, t3_value);
     			if (dirty & /*station*/ 1 && t5_value !== (t5_value = /*station*/ ctx[0].bitrate + "")) set_data_dev(t5, t5_value);
     			if (dirty & /*station*/ 1 && t7_value !== (t7_value = /*station*/ ctx[0].votes + "")) set_data_dev(t7, t7_value);
-    			if (dirty & /*station*/ 1 && t9_value !== (t9_value = /*station*/ ctx[0].url + "")) set_data_dev(t9, t9_value);
 
     			if (dirty & /*station*/ 1 && a1_href_value !== (a1_href_value = /*station*/ ctx[0].url)) {
     				attr_dev(a1, "href", a1_href_value);
     			}
 
-    			if (dirty & /*icon*/ 4) set_data_dev(t13, /*icon*/ ctx[2]);
+    			if (dirty & /*icon*/ 4) set_data_dev(t11, /*icon*/ ctx[2]);
     		},
     		i: noop,
     		o: noop,
@@ -661,33 +654,41 @@ var app = (function () {
 
     function get_each_context(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[13] = list[i];
+    	child_ctx[19] = list[i];
     	return child_ctx;
     }
 
     function get_each_context_1(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[13] = list[i];
+    	child_ctx[19] = list[i];
     	return child_ctx;
     }
 
-    // (80:8) {#if stations_downloaded.length}
+    // (98:8) {#if stations_downloaded.length}
     function create_if_block_1(ctx) {
+    	let div;
+    	let p;
+    	let t0_value = /*stations_downloaded*/ ctx[2].length + "";
+    	let t0;
+    	let t1;
+    	let t2;
+    	let t3;
+    	let t4;
     	let table;
     	let thead;
     	let tr;
     	let th0;
-    	let t1;
+    	let t6;
     	let th1;
-    	let t3;
+    	let t8;
     	let th2;
-    	let t5;
+    	let t10;
     	let th3;
-    	let t7;
+    	let t12;
     	let th4;
-    	let t9;
+    	let t14;
     	let th5;
-    	let t11;
+    	let t16;
     	let tbody;
     	let current;
     	let each_value_1 = /*stations_downloaded*/ ctx[2];
@@ -704,60 +705,76 @@ var app = (function () {
 
     	const block = {
     		c: function create() {
+    			div = element("div");
+    			p = element("p");
+    			t0 = text(t0_value);
+    			t1 = text(" results for query \"");
+    			t2 = text(/*search*/ ctx[0]);
+    			t3 = text("\"");
+    			t4 = space();
     			table = element("table");
     			thead = element("thead");
     			tr = element("tr");
     			th0 = element("th");
     			th0.textContent = "Name";
-    			t1 = space();
+    			t6 = space();
     			th1 = element("th");
     			th1.textContent = "Codec";
-    			t3 = space();
+    			t8 = space();
     			th2 = element("th");
     			th2.textContent = "Bitrate";
-    			t5 = space();
+    			t10 = space();
     			th3 = element("th");
     			th3.textContent = "Votes";
-    			t7 = space();
+    			t12 = space();
     			th4 = element("th");
     			th4.textContent = "Play";
-    			t9 = space();
+    			t14 = space();
     			th5 = element("th");
     			th5.textContent = "Add";
-    			t11 = space();
+    			t16 = space();
     			tbody = element("tbody");
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].c();
     			}
 
-    			add_location(th0, file$1, 83, 20, 2801);
-    			add_location(th1, file$1, 86, 20, 2881);
-    			add_location(th2, file$1, 89, 20, 2962);
-    			add_location(th3, file$1, 92, 20, 3045);
-    			add_location(th4, file$1, 95, 20, 3126);
-    			add_location(th5, file$1, 98, 20, 3206);
-    			add_location(tr, file$1, 82, 16, 2776);
-    			add_location(thead, file$1, 81, 12, 2752);
-    			add_location(tbody, file$1, 103, 12, 3320);
-    			add_location(table, file$1, 80, 8, 2732);
+    			add_location(p, file$1, 99, 12, 3349);
+    			add_location(div, file$1, 98, 8, 3331);
+    			add_location(th0, file$1, 104, 20, 3506);
+    			add_location(th1, file$1, 107, 20, 3586);
+    			add_location(th2, file$1, 110, 20, 3667);
+    			add_location(th3, file$1, 113, 20, 3750);
+    			add_location(th4, file$1, 116, 20, 3831);
+    			add_location(th5, file$1, 119, 20, 3911);
+    			add_location(tr, file$1, 103, 16, 3481);
+    			add_location(thead, file$1, 102, 12, 3457);
+    			add_location(tbody, file$1, 124, 12, 4025);
+    			add_location(table, file$1, 101, 8, 3437);
     		},
     		m: function mount(target, anchor) {
+    			insert_dev(target, div, anchor);
+    			append_dev(div, p);
+    			append_dev(p, t0);
+    			append_dev(p, t1);
+    			append_dev(p, t2);
+    			append_dev(p, t3);
+    			insert_dev(target, t4, anchor);
     			insert_dev(target, table, anchor);
     			append_dev(table, thead);
     			append_dev(thead, tr);
     			append_dev(tr, th0);
-    			append_dev(tr, t1);
+    			append_dev(tr, t6);
     			append_dev(tr, th1);
-    			append_dev(tr, t3);
+    			append_dev(tr, t8);
     			append_dev(tr, th2);
-    			append_dev(tr, t5);
+    			append_dev(tr, t10);
     			append_dev(tr, th3);
-    			append_dev(tr, t7);
+    			append_dev(tr, t12);
     			append_dev(tr, th4);
-    			append_dev(tr, t9);
+    			append_dev(tr, t14);
     			append_dev(tr, th5);
-    			append_dev(table, t11);
+    			append_dev(table, t16);
     			append_dev(table, tbody);
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
@@ -767,6 +784,9 @@ var app = (function () {
     			current = true;
     		},
     		p: function update(ctx, dirty) {
+    			if ((!current || dirty & /*stations_downloaded*/ 4) && t0_value !== (t0_value = /*stations_downloaded*/ ctx[2].length + "")) set_data_dev(t0, t0_value);
+    			if (!current || dirty & /*search*/ 1) set_data_dev(t2, /*search*/ ctx[0]);
+
     			if (dirty & /*stations_downloaded, addItem*/ 36) {
     				each_value_1 = /*stations_downloaded*/ ctx[2];
     				validate_each_argument(each_value_1);
@@ -814,6 +834,8 @@ var app = (function () {
     			current = false;
     		},
     		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div);
+    			if (detaching) detach_dev(t4);
     			if (detaching) detach_dev(table);
     			destroy_each(each_blocks, detaching);
     		}
@@ -823,21 +845,21 @@ var app = (function () {
     		block,
     		id: create_if_block_1.name,
     		type: "if",
-    		source: "(80:8) {#if stations_downloaded.length}",
+    		source: "(98:8) {#if stations_downloaded.length}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (105:20) {#each stations_downloaded as station}
+    // (126:20) {#each stations_downloaded as station}
     function create_each_block_1(ctx) {
     	let station;
     	let current;
 
     	station = new Station({
     			props: {
-    				station: /*station*/ ctx[13],
+    				station: /*station*/ ctx[19],
     				_onclick: /*addItem*/ ctx[5],
     				icon: "→"
     			},
@@ -854,7 +876,7 @@ var app = (function () {
     		},
     		p: function update(ctx, dirty) {
     			const station_changes = {};
-    			if (dirty & /*stations_downloaded*/ 4) station_changes.station = /*station*/ ctx[13];
+    			if (dirty & /*stations_downloaded*/ 4) station_changes.station = /*station*/ ctx[19];
     			station.$set(station_changes);
     		},
     		i: function intro(local) {
@@ -875,14 +897,14 @@ var app = (function () {
     		block,
     		id: create_each_block_1.name,
     		type: "each",
-    		source: "(105:20) {#each stations_downloaded as station}",
+    		source: "(126:20) {#each stations_downloaded as station}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (113:8) {#if stations_selected.length}
+    // (134:8) {#if stations_selected.length}
     function create_if_block(ctx) {
     	let h2;
     	let t1;
@@ -954,18 +976,18 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			add_location(h2, file$1, 113, 8, 3638);
-    			add_location(button, file$1, 114, 8, 3673);
-    			add_location(th0, file$1, 120, 20, 3830);
-    			add_location(th1, file$1, 123, 20, 3910);
-    			add_location(th2, file$1, 126, 20, 3991);
-    			add_location(th3, file$1, 129, 20, 4074);
-    			add_location(th4, file$1, 132, 20, 4155);
-    			add_location(th5, file$1, 135, 20, 4235);
-    			add_location(tr, file$1, 119, 16, 3805);
-    			add_location(thead, file$1, 118, 12, 3781);
-    			add_location(tbody, file$1, 140, 12, 4349);
-    			add_location(table, file$1, 117, 8, 3761);
+    			add_location(h2, file$1, 134, 8, 4343);
+    			add_location(button, file$1, 135, 8, 4378);
+    			add_location(th0, file$1, 141, 20, 4535);
+    			add_location(th1, file$1, 144, 20, 4615);
+    			add_location(th2, file$1, 147, 20, 4696);
+    			add_location(th3, file$1, 150, 20, 4779);
+    			add_location(th4, file$1, 153, 20, 4860);
+    			add_location(th5, file$1, 156, 20, 4940);
+    			add_location(tr, file$1, 140, 16, 4510);
+    			add_location(thead, file$1, 139, 12, 4486);
+    			add_location(tbody, file$1, 161, 12, 5054);
+    			add_location(table, file$1, 138, 8, 4466);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h2, anchor);
@@ -1063,21 +1085,21 @@ var app = (function () {
     		block,
     		id: create_if_block.name,
     		type: "if",
-    		source: "(113:8) {#if stations_selected.length}",
+    		source: "(134:8) {#if stations_selected.length}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (142:16) {#each stations_selected as station}
+    // (163:16) {#each stations_selected as station}
     function create_each_block(ctx) {
     	let station;
     	let current;
 
     	station = new Station({
     			props: {
-    				station: /*station*/ ctx[13],
+    				station: /*station*/ ctx[19],
     				_onclick: /*deleteItem*/ ctx[4],
     				icon: "␡"
     			},
@@ -1094,7 +1116,7 @@ var app = (function () {
     		},
     		p: function update(ctx, dirty) {
     			const station_changes = {};
-    			if (dirty & /*stations_selected*/ 2) station_changes.station = /*station*/ ctx[13];
+    			if (dirty & /*stations_selected*/ 2) station_changes.station = /*station*/ ctx[19];
     			station.$set(station_changes);
     		},
     		i: function intro(local) {
@@ -1115,7 +1137,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(142:16) {#each stations_selected as station}",
+    		source: "(163:16) {#each stations_selected as station}",
     		ctx
     	});
 
@@ -1131,19 +1153,30 @@ var app = (function () {
     	let t2;
     	let div2;
     	let t3;
-    	let div6;
-    	let div4;
+    	let div7;
+    	let div5;
     	let h2;
     	let t5;
     	let form;
     	let input;
     	let t6;
-    	let button;
+    	let button0;
     	let t7;
-    	let button_disabled_value;
+    	let button0_disabled_value;
     	let t8;
-    	let t9;
-    	let div5;
+    	let div4;
+    	let button1;
+    	let t10;
+    	let button2;
+    	let t12;
+    	let button3;
+    	let t14;
+    	let button4;
+    	let t16;
+    	let button5;
+    	let t18;
+    	let t19;
+    	let div6;
     	let current;
     	let mounted;
     	let dispose;
@@ -1161,42 +1194,64 @@ var app = (function () {
     			t2 = space();
     			div2 = element("div");
     			t3 = space();
-    			div6 = element("div");
-    			div4 = element("div");
+    			div7 = element("div");
+    			div5 = element("div");
     			h2 = element("h2");
     			h2.textContent = "Search stations";
     			t5 = space();
     			form = element("form");
     			input = element("input");
     			t6 = space();
-    			button = element("button");
+    			button0 = element("button");
     			t7 = text("Submit");
     			t8 = space();
+    			div4 = element("div");
+    			button1 = element("button");
+    			button1.textContent = "classic rock";
+    			t10 = space();
+    			button2 = element("button");
+    			button2.textContent = "pop";
+    			t12 = space();
+    			button3 = element("button");
+    			button3.textContent = "party";
+    			t14 = space();
+    			button4 = element("button");
+    			button4.textContent = "disco";
+    			t16 = space();
+    			button5 = element("button");
+    			button5.textContent = "disco polo";
+    			t18 = space();
     			if (if_block0) if_block0.c();
-    			t9 = space();
-    			div5 = element("div");
+    			t19 = space();
+    			div6 = element("div");
     			if (if_block1) if_block1.c();
     			attr_dev(div0, "class", "column-3");
-    			add_location(div0, file$1, 63, 4, 2251);
-    			add_location(h1, file$1, 65, 8, 2315);
+    			add_location(div0, file$1, 64, 4, 2291);
+    			add_location(h1, file$1, 66, 8, 2355);
     			attr_dev(div1, "class", "column-3");
-    			add_location(div1, file$1, 64, 4, 2284);
+    			add_location(div1, file$1, 65, 4, 2324);
     			attr_dev(div2, "class", "column-3");
-    			add_location(div2, file$1, 67, 4, 2364);
+    			add_location(div2, file$1, 68, 4, 2404);
     			attr_dev(div3, "class", "row");
-    			add_location(div3, file$1, 62, 0, 2229);
-    			add_location(h2, file$1, 72, 8, 2454);
-    			add_location(input, file$1, 74, 12, 2546);
-    			button.disabled = button_disabled_value = !/*name*/ ctx[0];
-    			attr_dev(button, "type", "submit");
-    			add_location(button, file$1, 75, 12, 2584);
-    			add_location(form, file$1, 73, 8, 2487);
-    			attr_dev(div4, "class", "column-2");
-    			add_location(div4, file$1, 71, 4, 2423);
+    			add_location(div3, file$1, 63, 0, 2269);
+    			add_location(h2, file$1, 73, 8, 2494);
+    			add_location(input, file$1, 75, 12, 2598);
+    			button0.disabled = button0_disabled_value = !/*search*/ ctx[0];
+    			attr_dev(button0, "type", "submit");
+    			add_location(button0, file$1, 76, 12, 2638);
+    			add_location(form, file$1, 74, 8, 2527);
+    			add_location(button1, file$1, 81, 12, 2765);
+    			add_location(button2, file$1, 84, 12, 2877);
+    			add_location(button3, file$1, 87, 12, 2971);
+    			add_location(button4, file$1, 90, 12, 3069);
+    			add_location(button5, file$1, 93, 12, 3167);
+    			add_location(div4, file$1, 80, 8, 2747);
     			attr_dev(div5, "class", "column-2");
-    			add_location(div5, file$1, 111, 4, 3568);
-    			attr_dev(div6, "class", "row");
-    			add_location(div6, file$1, 70, 0, 2401);
+    			add_location(div5, file$1, 72, 4, 2463);
+    			attr_dev(div6, "class", "column-2");
+    			add_location(div6, file$1, 132, 4, 4273);
+    			attr_dev(div7, "class", "row");
+    			add_location(div7, file$1, 71, 0, 2441);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -1210,39 +1265,55 @@ var app = (function () {
     			append_dev(div3, t2);
     			append_dev(div3, div2);
     			insert_dev(target, t3, anchor);
-    			insert_dev(target, div6, anchor);
-    			append_dev(div6, div4);
-    			append_dev(div4, h2);
-    			append_dev(div4, t5);
-    			append_dev(div4, form);
+    			insert_dev(target, div7, anchor);
+    			append_dev(div7, div5);
+    			append_dev(div5, h2);
+    			append_dev(div5, t5);
+    			append_dev(div5, form);
     			append_dev(form, input);
-    			set_input_value(input, /*name*/ ctx[0]);
+    			set_input_value(input, /*search*/ ctx[0]);
     			append_dev(form, t6);
-    			append_dev(form, button);
-    			append_dev(button, t7);
-    			append_dev(div4, t8);
-    			if (if_block0) if_block0.m(div4, null);
-    			append_dev(div6, t9);
-    			append_dev(div6, div5);
-    			if (if_block1) if_block1.m(div5, null);
+    			append_dev(form, button0);
+    			append_dev(button0, t7);
+    			append_dev(div5, t8);
+    			append_dev(div5, div4);
+    			append_dev(div4, button1);
+    			append_dev(div4, t10);
+    			append_dev(div4, button2);
+    			append_dev(div4, t12);
+    			append_dev(div4, button3);
+    			append_dev(div4, t14);
+    			append_dev(div4, button4);
+    			append_dev(div4, t16);
+    			append_dev(div4, button5);
+    			append_dev(div5, t18);
+    			if (if_block0) if_block0.m(div5, null);
+    			append_dev(div7, t19);
+    			append_dev(div7, div6);
+    			if (if_block1) if_block1.m(div6, null);
     			current = true;
 
     			if (!mounted) {
     				dispose = [
     					listen_dev(input, "input", /*input_input_handler*/ ctx[7]),
-    					listen_dev(form, "submit", prevent_default(/*handleSubmit*/ ctx[3]), false, true, false)
+    					listen_dev(form, "submit", prevent_default(/*submit_handler*/ ctx[8]), false, true, false),
+    					listen_dev(button1, "click", /*click_handler*/ ctx[9], false, false, false),
+    					listen_dev(button2, "click", /*click_handler_1*/ ctx[10], false, false, false),
+    					listen_dev(button3, "click", /*click_handler_2*/ ctx[11], false, false, false),
+    					listen_dev(button4, "click", /*click_handler_3*/ ctx[12], false, false, false),
+    					listen_dev(button5, "click", /*click_handler_4*/ ctx[13], false, false, false)
     				];
 
     				mounted = true;
     			}
     		},
     		p: function update(ctx, [dirty]) {
-    			if (dirty & /*name*/ 1 && input.value !== /*name*/ ctx[0]) {
-    				set_input_value(input, /*name*/ ctx[0]);
+    			if (dirty & /*search*/ 1 && input.value !== /*search*/ ctx[0]) {
+    				set_input_value(input, /*search*/ ctx[0]);
     			}
 
-    			if (!current || dirty & /*name*/ 1 && button_disabled_value !== (button_disabled_value = !/*name*/ ctx[0])) {
-    				prop_dev(button, "disabled", button_disabled_value);
+    			if (!current || dirty & /*search*/ 1 && button0_disabled_value !== (button0_disabled_value = !/*search*/ ctx[0])) {
+    				prop_dev(button0, "disabled", button0_disabled_value);
     			}
 
     			if (/*stations_downloaded*/ ctx[2].length) {
@@ -1256,7 +1327,7 @@ var app = (function () {
     					if_block0 = create_if_block_1(ctx);
     					if_block0.c();
     					transition_in(if_block0, 1);
-    					if_block0.m(div4, null);
+    					if_block0.m(div5, null);
     				}
     			} else if (if_block0) {
     				group_outros();
@@ -1279,7 +1350,7 @@ var app = (function () {
     					if_block1 = create_if_block(ctx);
     					if_block1.c();
     					transition_in(if_block1, 1);
-    					if_block1.m(div5, null);
+    					if_block1.m(div6, null);
     				}
     			} else if (if_block1) {
     				group_outros();
@@ -1305,7 +1376,7 @@ var app = (function () {
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(div3);
     			if (detaching) detach_dev(t3);
-    			if (detaching) detach_dev(div6);
+    			if (detaching) detach_dev(div7);
     			if (if_block0) if_block0.d();
     			if (if_block1) if_block1.d();
     			mounted = false;
@@ -1334,12 +1405,13 @@ var app = (function () {
     	const generate_playlist = () => [m3u_header, ...stations_selected.map(m3u_entry)].join("\n");
     	const queryString = params => "?" + Object.keys(params).map(key => key + "=" + params[key]).join("&");
     	const fullUrl = params => search_url + queryString(params);
-    	let name = "";
+    	let search = "classic rock";
     	let m3u_list = [];
     	let stations_selected = [];
     	let stations_downloaded = [];
 
-    	async function handleSubmit() {
+    	async function handleSubmit(name) {
+    		$$invalidate(0, search = name);
     		const res = await fetch(fullUrl({ name, order: "votes", reverse: true }), { method: "GET" });
     		$$invalidate(2, stations_downloaded = await res.json());
     	}
@@ -1391,9 +1463,16 @@ var app = (function () {
     	});
 
     	function input_input_handler() {
-    		name = this.value;
-    		$$invalidate(0, name);
+    		search = this.value;
+    		$$invalidate(0, search);
     	}
+
+    	const submit_handler = () => handleSubmit(search);
+    	const click_handler = () => handleSubmit("classic rock");
+    	const click_handler_1 = () => handleSubmit("pop");
+    	const click_handler_2 = () => handleSubmit("party");
+    	const click_handler_3 = () => handleSubmit("disco");
+    	const click_handler_4 = () => handleSubmit("disco polo");
 
     	$$self.$capture_state = () => ({
     		Station,
@@ -1403,7 +1482,7 @@ var app = (function () {
     		generate_playlist,
     		queryString,
     		fullUrl,
-    		name,
+    		search,
     		m3u_list,
     		stations_selected,
     		stations_downloaded,
@@ -1414,7 +1493,7 @@ var app = (function () {
     	});
 
     	$$self.$inject_state = $$props => {
-    		if ("name" in $$props) $$invalidate(0, name = $$props.name);
+    		if ("search" in $$props) $$invalidate(0, search = $$props.search);
     		if ("m3u_list" in $$props) m3u_list = $$props.m3u_list;
     		if ("stations_selected" in $$props) $$invalidate(1, stations_selected = $$props.stations_selected);
     		if ("stations_downloaded" in $$props) $$invalidate(2, stations_downloaded = $$props.stations_downloaded);
@@ -1425,14 +1504,20 @@ var app = (function () {
     	}
 
     	return [
-    		name,
+    		search,
     		stations_selected,
     		stations_downloaded,
     		handleSubmit,
     		deleteItem,
     		addItem,
     		download_generator,
-    		input_input_handler
+    		input_input_handler,
+    		submit_handler,
+    		click_handler,
+    		click_handler_1,
+    		click_handler_2,
+    		click_handler_3,
+    		click_handler_4
     	];
     }
 
