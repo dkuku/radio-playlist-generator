@@ -19,8 +19,13 @@
     </td>
     <td>
         {station.votes}
+    </td>
     <td>
-        <a class="btn" on:click={() => _onclick(station)}> {icon} </a>
+        {station.url}
+        <a href={station.url} class="btn tooltip" target="_blank" data-tooltip="Play in new window"> &#9658; </a>
+    </td>
+    <td>
+        <a href="#" class="btn tooltip" data-tooltip="send to playlist" on:click={() => _onclick(station)}> {icon} </a>
     </td>
 </tr>
 
@@ -30,5 +35,20 @@
       width: 50px;
       height: 50px;
       border-radius: 50%;
+    }
+    a.tooltip {
+      position: relative ;
+    }
+    a.tooltip:hover::after {
+      position: absolute ;
+      content: attr(data-tooltip) ;
+      top: 1.1em ;
+      left: 1em ;
+      min-width: 200px ;
+      border: 1px #808080 solid ;
+      padding: 8px ;
+      color: black ;
+      background-color: #cfc ;
+      z-index: 1 ;
     }
 </style>

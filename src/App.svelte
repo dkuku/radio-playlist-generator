@@ -92,6 +92,10 @@
                     </th>
                     <th>
                         Votes
+                    </th>
+                    <th>
+                        Play
+                    </th>
                     <th>
                         Add
                     </th>
@@ -125,6 +129,10 @@
                     </th>
                     <th>
                         Votes
+                    </th>
+                    <th>
+                        Play
+                    </th>
                     <th>
                         Add
                     </th>
