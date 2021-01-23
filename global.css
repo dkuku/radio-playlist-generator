@@ -42,20 +42,26 @@ input, button, select, textarea {
 	border-radius: 2px;
 }
 
+input {
+    min-width: 50%;
+}
 input:disabled {
 	color: #ccc;
 }
 
 button {
 	background-color: #009879;
+    margin: 25px 10px;
     color: #ffffff;
     font-family: sans-serif;
     font-size: 0.9em;
-	outline: none;
+    font-weight: 700;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
 button:disabled {
-	color: #999;
+	color: #DDD;
+	background-color: #999;
 }
 
 button:not(:disabled):active {
@@ -68,9 +74,8 @@ button:focus {
 
 table {
     border-collapse: collapse;
-    margin: 25px 0;
+    margin: 25px 10px;
     font-size: 0.9em;
-    font-family: sans-serif;
     min-width: 400px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }

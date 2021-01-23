@@ -427,8 +427,16 @@ var app = (function () {
     	let t7;
     	let t8;
     	let td4;
-    	let a1;
+    	let t9_value = /*station*/ ctx[0].url + "";
     	let t9;
+    	let t10;
+    	let a1;
+    	let t11;
+    	let a1_href_value;
+    	let t12;
+    	let td5;
+    	let a2;
+    	let t13;
     	let mounted;
     	let dispose;
 
@@ -451,10 +459,16 @@ var app = (function () {
     			t7 = text(t7_value);
     			t8 = space();
     			td4 = element("td");
+    			t9 = text(t9_value);
+    			t10 = space();
     			a1 = element("a");
-    			t9 = text(/*icon*/ ctx[2]);
+    			t11 = text("►");
+    			t12 = space();
+    			td5 = element("td");
+    			a2 = element("a");
+    			t13 = text(/*icon*/ ctx[2]);
     			if (img.src !== (img_src_value = /*station*/ ctx[0].favicon)) attr_dev(img, "src", img_src_value);
-    			attr_dev(img, "class", "icon svelte-18qbx5p");
+    			attr_dev(img, "class", "icon svelte-1ejnbx");
     			add_location(img, file, 9, 12, 152);
     			attr_dev(a0, "href", a0_href_value = /*station*/ ctx[0].homepage);
     			add_location(a0, file, 8, 8, 112);
@@ -462,9 +476,17 @@ var app = (function () {
     			add_location(td1, file, 13, 4, 248);
     			add_location(td2, file, 16, 4, 291);
     			add_location(td3, file, 19, 4, 336);
-    			attr_dev(a1, "class", "btn");
-    			add_location(a1, file, 22, 8, 382);
-    			add_location(td4, file, 21, 4, 369);
+    			attr_dev(a1, "href", a1_href_value = /*station*/ ctx[0].url);
+    			attr_dev(a1, "class", "btn tooltip svelte-1ejnbx");
+    			attr_dev(a1, "target", "_blank");
+    			attr_dev(a1, "data-tooltip", "Play in new window");
+    			add_location(a1, file, 24, 8, 414);
+    			add_location(td4, file, 22, 4, 379);
+    			attr_dev(a2, "href", "#");
+    			attr_dev(a2, "class", "btn tooltip svelte-1ejnbx");
+    			attr_dev(a2, "data-tooltip", "send to playlist");
+    			add_location(a2, file, 27, 8, 547);
+    			add_location(td5, file, 26, 4, 534);
     			add_location(tr, file, 6, 0, 90);
     		},
     		l: function claim(nodes) {
@@ -486,13 +508,19 @@ var app = (function () {
     			append_dev(tr, t6);
     			append_dev(tr, td3);
     			append_dev(td3, t7);
-    			append_dev(td3, t8);
+    			append_dev(tr, t8);
     			append_dev(tr, td4);
+    			append_dev(td4, t9);
+    			append_dev(td4, t10);
     			append_dev(td4, a1);
-    			append_dev(a1, t9);
+    			append_dev(a1, t11);
+    			append_dev(tr, t12);
+    			append_dev(tr, td5);
+    			append_dev(td5, a2);
+    			append_dev(a2, t13);
 
     			if (!mounted) {
-    				dispose = listen_dev(a1, "click", /*click_handler*/ ctx[3], false, false, false);
+    				dispose = listen_dev(a2, "click", /*click_handler*/ ctx[3], false, false, false);
     				mounted = true;
     			}
     		},
@@ -510,7 +538,13 @@ var app = (function () {
     			if (dirty & /*station*/ 1 && t3_value !== (t3_value = /*station*/ ctx[0].codec + "")) set_data_dev(t3, t3_value);
     			if (dirty & /*station*/ 1 && t5_value !== (t5_value = /*station*/ ctx[0].bitrate + "")) set_data_dev(t5, t5_value);
     			if (dirty & /*station*/ 1 && t7_value !== (t7_value = /*station*/ ctx[0].votes + "")) set_data_dev(t7, t7_value);
-    			if (dirty & /*icon*/ 4) set_data_dev(t9, /*icon*/ ctx[2]);
+    			if (dirty & /*station*/ 1 && t9_value !== (t9_value = /*station*/ ctx[0].url + "")) set_data_dev(t9, t9_value);
+
+    			if (dirty & /*station*/ 1 && a1_href_value !== (a1_href_value = /*station*/ ctx[0].url)) {
+    				attr_dev(a1, "href", a1_href_value);
+    			}
+
+    			if (dirty & /*icon*/ 4) set_data_dev(t13, /*icon*/ ctx[2]);
     		},
     		i: noop,
     		o: noop,
@@ -649,8 +683,11 @@ var app = (function () {
     	let th2;
     	let t5;
     	let th3;
+    	let t7;
     	let th4;
-    	let t8;
+    	let t9;
+    	let th5;
+    	let t11;
     	let tbody;
     	let current;
     	let each_value_1 = /*stations_downloaded*/ ctx[2];
@@ -680,10 +717,14 @@ var app = (function () {
     			th2.textContent = "Bitrate";
     			t5 = space();
     			th3 = element("th");
-    			th3.textContent = "Votes\n                    ";
+    			th3.textContent = "Votes";
+    			t7 = space();
     			th4 = element("th");
-    			th4.textContent = "Add";
-    			t8 = space();
+    			th4.textContent = "Play";
+    			t9 = space();
+    			th5 = element("th");
+    			th5.textContent = "Add";
+    			t11 = space();
     			tbody = element("tbody");
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
@@ -694,10 +735,11 @@ var app = (function () {
     			add_location(th1, file$1, 86, 20, 2881);
     			add_location(th2, file$1, 89, 20, 2962);
     			add_location(th3, file$1, 92, 20, 3045);
-    			add_location(th4, file$1, 94, 20, 3100);
+    			add_location(th4, file$1, 95, 20, 3126);
+    			add_location(th5, file$1, 98, 20, 3206);
     			add_location(tr, file$1, 82, 16, 2776);
     			add_location(thead, file$1, 81, 12, 2752);
-    			add_location(tbody, file$1, 99, 12, 3214);
+    			add_location(tbody, file$1, 103, 12, 3320);
     			add_location(table, file$1, 80, 8, 2732);
     		},
     		m: function mount(target, anchor) {
@@ -711,8 +753,11 @@ var app = (function () {
     			append_dev(tr, th2);
     			append_dev(tr, t5);
     			append_dev(tr, th3);
+    			append_dev(tr, t7);
     			append_dev(tr, th4);
-    			append_dev(table, t8);
+    			append_dev(tr, t9);
+    			append_dev(tr, th5);
+    			append_dev(table, t11);
     			append_dev(table, tbody);
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
@@ -785,7 +830,7 @@ var app = (function () {
     	return block;
     }
 
-    // (101:20) {#each stations_downloaded as station}
+    // (105:20) {#each stations_downloaded as station}
     function create_each_block_1(ctx) {
     	let station;
     	let current;
@@ -830,14 +875,14 @@ var app = (function () {
     		block,
     		id: create_each_block_1.name,
     		type: "each",
-    		source: "(101:20) {#each stations_downloaded as station}",
+    		source: "(105:20) {#each stations_downloaded as station}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (109:8) {#if stations_selected.length}
+    // (113:8) {#if stations_selected.length}
     function create_if_block(ctx) {
     	let h2;
     	let t1;
@@ -853,8 +898,11 @@ var app = (function () {
     	let th2;
     	let t9;
     	let th3;
+    	let t11;
     	let th4;
-    	let t12;
+    	let t13;
+    	let th5;
+    	let t15;
     	let tbody;
     	let current;
     	let mounted;
@@ -892,27 +940,32 @@ var app = (function () {
     			th2.textContent = "Bitrate";
     			t9 = space();
     			th3 = element("th");
-    			th3.textContent = "Votes\n                    ";
+    			th3.textContent = "Votes";
+    			t11 = space();
     			th4 = element("th");
-    			th4.textContent = "Add";
-    			t12 = space();
+    			th4.textContent = "Play";
+    			t13 = space();
+    			th5 = element("th");
+    			th5.textContent = "Add";
+    			t15 = space();
     			tbody = element("tbody");
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].c();
     			}
 
-    			add_location(h2, file$1, 109, 8, 3532);
-    			add_location(button, file$1, 110, 8, 3567);
-    			add_location(th0, file$1, 116, 20, 3724);
-    			add_location(th1, file$1, 119, 20, 3804);
-    			add_location(th2, file$1, 122, 20, 3885);
-    			add_location(th3, file$1, 125, 20, 3968);
-    			add_location(th4, file$1, 127, 20, 4023);
-    			add_location(tr, file$1, 115, 16, 3699);
-    			add_location(thead, file$1, 114, 12, 3675);
-    			add_location(tbody, file$1, 132, 12, 4137);
-    			add_location(table, file$1, 113, 8, 3655);
+    			add_location(h2, file$1, 113, 8, 3638);
+    			add_location(button, file$1, 114, 8, 3673);
+    			add_location(th0, file$1, 120, 20, 3830);
+    			add_location(th1, file$1, 123, 20, 3910);
+    			add_location(th2, file$1, 126, 20, 3991);
+    			add_location(th3, file$1, 129, 20, 4074);
+    			add_location(th4, file$1, 132, 20, 4155);
+    			add_location(th5, file$1, 135, 20, 4235);
+    			add_location(tr, file$1, 119, 16, 3805);
+    			add_location(thead, file$1, 118, 12, 3781);
+    			add_location(tbody, file$1, 140, 12, 4349);
+    			add_location(table, file$1, 117, 8, 3761);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h2, anchor);
@@ -929,8 +982,11 @@ var app = (function () {
     			append_dev(tr, th2);
     			append_dev(tr, t9);
     			append_dev(tr, th3);
+    			append_dev(tr, t11);
     			append_dev(tr, th4);
-    			append_dev(table, t12);
+    			append_dev(tr, t13);
+    			append_dev(tr, th5);
+    			append_dev(table, t15);
     			append_dev(table, tbody);
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
@@ -1007,14 +1063,14 @@ var app = (function () {
     		block,
     		id: create_if_block.name,
     		type: "if",
-    		source: "(109:8) {#if stations_selected.length}",
+    		source: "(113:8) {#if stations_selected.length}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (134:16) {#each stations_selected as station}
+    // (142:16) {#each stations_selected as station}
     function create_each_block(ctx) {
     	let station;
     	let current;
@@ -1059,7 +1115,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(134:16) {#each stations_selected as station}",
+    		source: "(142:16) {#each stations_selected as station}",
     		ctx
     	});
 
@@ -1138,7 +1194,7 @@ var app = (function () {
     			attr_dev(div4, "class", "column-2");
     			add_location(div4, file$1, 71, 4, 2423);
     			attr_dev(div5, "class", "column-2");
-    			add_location(div5, file$1, 107, 4, 3462);
+    			add_location(div5, file$1, 111, 4, 3568);
     			attr_dev(div6, "class", "row");
     			add_location(div6, file$1, 70, 0, 2401);
     		},
